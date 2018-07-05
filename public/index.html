@@ -2,16 +2,19 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scraping With Mongoose</title>
+  	<!-- <link rel="stylesheet" type="text/css" href="./css/reset.css"> -->
+  	<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
+      body {
+      	background-color: #F8F9FA;
+      	min-height: 2000px;
       }
-      #articles {
+      /*#articles {
         display: inline-block;
         overflow: auto;
         width: 60%;
@@ -33,17 +36,62 @@
       textarea {
         height: 200px;
         font-size: 18px;
+      }*/
+      .navbar {
+      	background: #009DF7;
+      	color: #fff;
       }
+      .navbar-toggler {
+      	background: lightgray;
+	    }
+	    .navbar-light .navbar-nav .active>.nav-link,
+	    .navbar-light .navbar-nav .nav-link.active,
+	    .navbar-light .navbar-nav .nav-link.show,
+	    .navbar-light .navbar-nav .show>.nav-link,
+	    .navbar-light .navbar-nav .nav-link {
+	    	color: #fff;
+	    }
+	    .navbar-light .navbar-nav .nav-link:hover {
+	    	color: #CDDFF0;
+	    }
+
     </style>
   </head>
   <body>
-    <div id="wrapper">
+  	<nav class="navbar navbar-expand-sm navbar-light">
+  	  <a class="navbar-brand" href="#">Navbar</a>
+  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  	    <span class="navbar-toggler-icon"></span>
+  	  </button>
+
+  	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  	    <ul class="navbar-nav mr-auto">
+  	      <li class="nav-item active">
+  	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  	      </li>
+  	      <li class="nav-item">
+  	        <a class="nav-link" href="#">Link</a>
+  	      </li>
+  	      <li class="nav-item dropdown">
+  	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  	          Dropdown
+  	        </a>
+  	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  	          <a class="dropdown-item" href="#">Action</a>
+  	          <a class="dropdown-item" href="#">Another action</a>
+  	          <div class="dropdown-divider"></div>
+  	          <a class="dropdown-item" href="#">Something else here</a>
+  	        </div>
+  	      </li>
+  	    </ul>
+  	  </div>
+  	</nav>
+  	<div class="container">
       <h1>PFT Rumors...</h1>
       <h2><i>This site is your source for the hottest rumors from the Profootballtalk.com rumor mill!</i></h2>
       <div id="articles"></div>
       <div id="comments"></div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
